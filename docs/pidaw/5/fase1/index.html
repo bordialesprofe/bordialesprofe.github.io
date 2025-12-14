@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-pidaw/5/fase1" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Fase 1 — Análisis y definición del proyecto | Apuntes de Informática</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bordialesprofe.github.io/docs/pidaw/5/fase1"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Fase 1 — Análisis y definición del proyecto | Apuntes de Informática"><meta data-rh="true" name="description" content="En esta fase identificarás el problema que quieres resolver, definirás a quién va dirigida tu aplicación y establecerás las características mínimas de tu proyecto. Esta fase marca el punto de partida y te permitirá tomar decisiones fundamentadas para avanzar con seguridad en el resto del módulo."><meta data-rh="true" property="og:description" content="En esta fase identificarás el problema que quieres resolver, definirás a quién va dirigida tu aplicación y establecerás las características mínimas de tu proyecto. Esta fase marca el punto de partida y te permitirá tomar decisiones fundamentadas para avanzar con seguridad en el resto del módulo."><link data-rh="true" rel="icon" href="/img/estilo/begona.ico"><link data-rh="true" rel="canonical" href="https://bordialesprofe.github.io/docs/pidaw/5/fase1"><link data-rh="true" rel="alternate" href="https://bordialesprofe.github.io/docs/pidaw/5/fase1" hreflang="es"><link data-rh="true" rel="alternate" href="https://bordialesprofe.github.io/docs/pidaw/5/fase1" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.3983dd69.css">
+<script src="/assets/js/runtime~main.94d14937.js" defer="defer"></script>
+<script src="/assets/js/main.0c24390b.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/estilo/logoBego.jpg"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/estilo/logoBego.jpg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/estilo/logoBego.jpg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Inicio</b></a><a class="navbar__item navbar__link" href="/docs/di/UT7/">DI</a><a class="navbar__item navbar__link" href="/docs/dwec/UT5/">DWEC</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/pidaw/">PIDAW</a></div><div class="navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Cambiar entre modo oscuro y claro (actualmente modo claro)" aria-label="Cambiar entre modo oscuro y claro (actualmente modo claro)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/">Proyecto Intermodular de Desarrollo de Aplicaciones Web (PIDAW)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/1">1. Proyecto Marco del módulo</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/2">2. Tu Proyecto</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/3">3. Normativa del módulo y fundamentos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/4">4. Organización del trabajo</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/pidaw/5/">5. Fases e hitos del proyecto</a><button aria-label="Colapsar categoría &#x27;5. Fases e hitos del proyecto&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/pidaw/5/fase1">Fase 1 — Análisis y definición del proyecto</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/pidaw/5/fase2">Fase 2 — Diseño y planificación</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/6">6. Índice de la memoria final</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/pidaw/5/"><span itemprop="name">5. Fases e hitos del proyecto</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Fase 1 — Análisis y definición del proyecto</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Fase 1 — Análisis y definición del proyecto</h1></header><p>En esta fase identificarás el problema que quieres resolver, definirás a quién va dirigida tu aplicación y establecerás las características mínimas de tu proyecto. Esta fase marca el punto de partida y te permitirá tomar decisiones fundamentadas para avanzar con seguridad en el resto del módulo.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1️⃣-qué-debes-hacer-en-esta-fase">1️⃣ <strong>Qué debes hacer en esta fase</strong><a href="#1️⃣-qué-debes-hacer-en-esta-fase" class="hash-link" aria-label="Enlace directo al 1️⃣-qué-debes-hacer-en-esta-fase" title="Enlace directo al 1️⃣-qué-debes-hacer-en-esta-fase">​</a></h2>
+<p><strong>1) Definir la idea del proyecto y el ODS relacionado</strong></p>
+<ul>
+<li>Selecciona un problema o necesidad real.</li>
+<li>Elige un ODS relacionado.</li>
+<li>Explica qué aporta tu proyecto a ese ODS.</li>
+<li>Resume tu propuesta de forma clara.</li>
+</ul>
+<p><strong>2) Analizar al usuario y definir requisitos</strong></p>
+<ul>
+<li>Identifica a tu usuario principal (perfil, necesidades y objetivos).</li>
+<li>Describe qué problema tiene y cómo tu proyecto lo ayudará.</li>
+<li>Redacta requisitos funcionales (qué hará tu aplicación).</li>
+<li>Redacta requisitos no funcionales (calidad, accesibilidad, rendimiento…).</li>
+</ul>
+<p><strong>3) Realizar un análisis externo básico</strong></p>
+<ul>
+<li>Identifica el sector en el que se enmarca tu proyecto.</li>
+<li>Busca 3 competidores directos o similares.</li>
+<li>Expón oportunidades (qué aporta tu proyecto).</li>
+<li>Añade una nota breve sobre aspectos legales (protección de datos, PRL básica).</li>
+<li>Menciona posibles ayudas, programas o iniciativas relacionadas.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2️⃣-entregables-de-la-fase">2️⃣ <strong>Entregables de la fase</strong><a href="#2️⃣-entregables-de-la-fase" class="hash-link" aria-label="Enlace directo al 2️⃣-entregables-de-la-fase" title="Enlace directo al 2️⃣-entregables-de-la-fase">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-entregable-1--idea--ods--necesidad">📄 Entregable 1 — Idea + ODS + necesidad<a href="#-entregable-1--idea--ods--necesidad" class="hash-link" aria-label="Enlace directo al 📄 Entregable 1 — Idea + ODS + necesidad" title="Enlace directo al 📄 Entregable 1 — Idea + ODS + necesidad">​</a></h3>
+<p><strong>Tipo de archivo:</strong> PDF</p>
+<p><strong>Nombre recomendado:</strong> <code>F1_Actividad1_Idea_Proyecto_TuNombre.pdf</code></p>
+<p><strong>Contenido obligatorio:</strong></p>
+<ol>
+<li>Idea del proyecto</li>
+<li>Problema o necesidad detectada</li>
+<li>ODS seleccionado</li>
+<li>Justificación del ODS</li>
+<li>Resumen del proyecto</li>
+</ol>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span><strong>Presentación en clase + Acta de propuestas</strong></div><div class="admonitionContent_BuS1"><p>Este entregable incluye una <strong>presentación breve en clase</strong>.<br>
+<!-- -->Además, el grupo deberá elaborar un <strong>acta con las propuestas de mejora</strong> realizadas a cada alumno durante la sesión.<br>
+<!-- -->El acta se entregará junto con el PDF y formará parte de la evidencia del hito.</p></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><strong>Cómo redactarlo</strong></div><div class="admonitionContent_BuS1"><p>Puedes crearlo en <strong>Google Docs</strong>, <strong>Word</strong> o <strong>LibreOffice</strong>, pero debes exportarlo en <strong>PDF</strong> antes de entregarlo.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><strong>Extensión recomendada</strong></div><div class="admonitionContent_BuS1"><p>1–2 páginas son suficientes. Sé claro, concreto y evita tecnicismos innecesarios.</p></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span><strong>Evita este error</strong></div><div class="admonitionContent_BuS1"><p>No describas el ODS de forma genérica. Explica <strong>qué relación real</strong> tiene con tu proyecto.</p></div></div>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="--entregable-2--perfil-de-usuario-y-requisitos">📄  Entregable 2 — Perfil de usuario y requisitos<a href="#--entregable-2--perfil-de-usuario-y-requisitos" class="hash-link" aria-label="Enlace directo al 📄  Entregable 2 — Perfil de usuario y requisitos" title="Enlace directo al 📄  Entregable 2 — Perfil de usuario y requisitos">​</a></h3>
+<p><strong>Tipo de archivo:</strong> PDF</p>
+<p><strong>Nombre recomendado:</strong> <code>F1_Actividad2_Perfil_Requisitos_TuNombre.pdf</code></p>
+<p><strong>Contenido obligatorio:</strong></p>
+<ol>
+<li>
+<p><strong>Perfil de usuario principal</strong></p>
+<ul>
+<li>Datos básicos (edad aproximada, ocupación, nivel digital).</li>
+<li>Necesidades, objetivos y motivaciones.</li>
+<li>Puedes incluir una imagen o icono representativo.</li>
+</ul>
+</li>
+<li>
+<p><strong>Análisis de la realidad del usuario</strong></p>
+<ul>
+<li>Qué problema tiene.</li>
+<li>En qué contexto utilizará tu aplicación.</li>
+</ul>
+</li>
+<li>
+<p><strong>Requisitos funcionales (RF)</strong></p>
+<ul>
+<li>Lista numerada.</li>
+<li>Describe qué debe permitir hacer la aplicación.</li>
+</ul>
+</li>
+<li>
+<p><strong>Requisitos no funcionales (RNF)</strong></p>
+<ul>
+<li>Accesibilidad, rendimiento, seguridad, usabilidad…</li>
+<li>Indica solo lo que realmente necesitarás.</li>
+</ul>
+</li>
+<li>
+<p><strong>Conclusión</strong></p>
+<ul>
+<li>Qué implicaciones tendrá este análisis en tu diseño.</li>
+</ul>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span><strong>Presentación en clase + Acta de propuestas</strong></div><div class="admonitionContent_BuS1"><p>Este entregable incluye una <strong>presentación breve en clase</strong>.<br>
+<!-- -->Además, el grupo deberá elaborar un <strong>acta con las propuestas de mejora</strong> realizadas a cada alumno durante la sesión.<br>
+<!-- -->El acta se entregará junto con el PDF y formará parte de la evidencia del hito.</p></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><strong>Consejo para definir requisitos</strong></div><div class="admonitionContent_BuS1"><p>Los requisitos deben ser <strong>claros, medibles y concretos</strong>.<br>
+<!-- -->Ejemplo correcto: <em>“El sistema permitirá crear, editar y eliminar tareas.”</em><br>
+<!-- -->Ejemplo incorrecto: <em>“El sistema será intuitivo y funcionará bien.”</em></p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><strong>Herramientas recomendadas</strong></div><div class="admonitionContent_BuS1"><ul>
+<li><strong>Canva</strong>  para crear el perfil de usuario con imagen.</li>
+<li><strong>Notion / Trello</strong>  para organizar requisitos.</li>
+<li><strong>Google Docs / Word</strong>  para redactar el documento final.</li>
+</ul></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span><strong>Evita este error</strong></div><div class="admonitionContent_BuS1"><p>No escribas requisitos como frases vagas (“la app será bonita”).<br>
+<!-- -->Todo requisito debe <strong>poder comprobarse</strong> durante el desarrollo o en las pruebas.</p></div></div>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="--entregable-3--análisis-externo-del-proyecto">📄  Entregable 3 — Análisis externo del proyecto<a href="#--entregable-3--análisis-externo-del-proyecto" class="hash-link" aria-label="Enlace directo al 📄  Entregable 3 — Análisis externo del proyecto" title="Enlace directo al 📄  Entregable 3 — Análisis externo del proyecto">​</a></h3>
+<p><strong>Tipo de archivo:</strong> PDF</p>
+<p><strong>Nombre recomendado:</strong> <code>F1_Actividad3_Analisis_Externo_TuNombre.pdf</code></p>
+<p><strong>Contenido obligatorio:</strong></p>
+<ol>
+<li>
+<p><strong>Sector y empresas tipo</strong></p>
+<ul>
+<li>Define en qué sector se ubica tu aplicación.</li>
+<li>Incluye 2–3 ejemplos de empresas o servicios similares.</li>
+</ul>
+</li>
+<li>
+<p><strong>Competencia directa e indirecta</strong></p>
+<ul>
+<li>Selecciona 2–3 aplicaciones que resuelvan problemas parecidos.</li>
+<li>Compara brevemente qué hacen y qué no hacen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Oportunidades</strong></p>
+<ul>
+<li>Mini DAFO (solo fortalezas y oportunidades)<br>
+<strong>o</strong></li>
+<li>Lista de 3–4 ventajas de tu propuesta frente al mercado.</li>
+</ul>
+</li>
+<li>
+<p><strong>Aspectos legales esenciales</strong></p>
+<ul>
+<li>Protección de datos (<em>obligatorio siempre</em>).</li>
+<li>PRL mínima si aplica (normalmente riesgo muy bajo).</li>
+<li>Obligaciones fiscales solo si el proyecto las implica (indicarlas brevemente).</li>
+</ul>
+</li>
+<li>
+<p><strong>Ayudas o programas públicos relacionados</strong></p>
+<ul>
+<li>Menciona 1–2 iniciativas, convocatorias o programas (aunque sea de forma general).</li>
+</ul>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><strong>Cómo facilitar este análisis</strong></div><div class="admonitionContent_BuS1"><p>Busca solo lo imprescindible. No es un estudio académico.<br>
+<!-- -->Con 1–2 párrafos por sección es suficiente.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><strong>Herramientas recomendadas</strong></div><div class="admonitionContent_BuS1"><ul>
+<li><strong>Google Docs</strong>  para elaborar tablas o comparativas simples.</li>
+<li><strong>Google Sheets</strong>  si prefieres hacer comparaciones en tabla (insértala luego en el PDF).</li>
+</ul></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span><strong>Evita este error</strong></div><div class="admonitionContent_BuS1"><p>No copies descripciones de empresas o leyes desde Internet.<br>
+<!-- -->Debes <strong>adaptarlas</strong> al contexto de tu proyecto de forma breve y clara.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3️⃣-qué-partes-se-incorporan-a-la-memoria-final">3️⃣ Qué partes se incorporan a la memoria final<a href="#3️⃣-qué-partes-se-incorporan-a-la-memoria-final" class="hash-link" aria-label="Enlace directo al 3️⃣ Qué partes se incorporan a la memoria final" title="Enlace directo al 3️⃣ Qué partes se incorporan a la memoria final">​</a></h2>
+<p>El trabajo que realices en esta fase formará parte del <strong>Capítulo 4: Análisis del proyecto</strong> de tu memoria final. Deberás incluir:</p>
+<ul>
+<li>
+<p><strong>Problema o necesidad detectada</strong><br>
+<!-- -->Explica qué situación real motiva tu proyecto y por qué es relevante.</p>
+</li>
+<li>
+<p><strong>ODS relacionado y justificación</strong><br>
+<!-- -->Indica qué Objetivo de Desarrollo Sostenible has elegido y cómo tu proyecto contribuye a él.</p>
+</li>
+<li>
+<p><strong>Perfil de usuario y análisis de la realidad</strong><br>
+<!-- -->Describe para quién estás diseñando la aplicación y qué necesidades tiene.</p>
+</li>
+<li>
+<p><strong>Requisitos funcionales (RF)</strong><br>
+<!-- -->Lista de funciones esenciales que tu aplicación debe permitir.</p>
+</li>
+<li>
+<p><strong>Requisitos no funcionales (RNF)</strong><br>
+<!-- -->Aspectos de calidad: accesibilidad, rendimiento, usabilidad, seguridad, etc.</p>
+</li>
+<li>
+<p><strong>Análisis externo</strong></p>
+<ul>
+<li>Sector y empresas tipo</li>
+<li>Competencia</li>
+<li>Oportunidades</li>
+<li>Aspectos legales (incluyendo protección de datos)</li>
+<li>Ayudas o programas públicos relacionados</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><strong>Consejo</strong></div><div class="admonitionContent_BuS1"><p>Si redactas bien esta fase ahora, en la memoria final solo tendrás que copiar, revisar y adaptar.<br>
+<!-- -->Una Fase 1 sólida facilita todas las fases posteriores.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4️⃣-sugerencias-para-completar-la-fase">4️⃣ Sugerencias para completar la fase<a href="#4️⃣-sugerencias-para-completar-la-fase" class="hash-link" aria-label="Enlace directo al 4️⃣ Sugerencias para completar la fase" title="Enlace directo al 4️⃣ Sugerencias para completar la fase">​</a></h2>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><strong>Empieza por un problema pequeño</strong></div><div class="admonitionContent_BuS1"><p>Elige una idea realista para el tiempo y recursos disponibles. Una aplicación demasiado grande será difícil de terminar.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><strong>Cómo redactar requisitos</strong></div><div class="admonitionContent_BuS1"><p>Los requisitos deben ser breves, claros y verificables.<br>
+<!-- -->Ejemplo correcto: <em>“El sistema permitirá editar el perfil del usuario.”</em></p></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span><strong>Evita añadir funcionalidades extra</strong></div><div class="admonitionContent_BuS1"><p>Muchas ideas fallan porque se intenta abarcar demasiado.<br>
+<!-- -->Primero completa el mínimo del proyecto; después, si puedes, amplías.</p></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span><strong>Revisar tu idea con otros compañeros ayuda</strong></div><div class="admonitionContent_BuS1"><p>Comparar ideas y requisitos con otros estudiantes te permite detectar problemas antes de avanzar a la fase de diseño.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5️⃣-actividades-de-la-fase-1">5️⃣ Actividades de la Fase 1<a href="#5️⃣-actividades-de-la-fase-1" class="hash-link" aria-label="Enlace directo al 5️⃣ Actividades de la Fase 1" title="Enlace directo al 5️⃣ Actividades de la Fase 1">​</a></h2>
+<table><thead><tr><th>Actividad</th><th>Qué haces</th><th>Qué entregas</th><th>Hito</th></tr></thead><tbody><tr><td><strong>Actividad 1</strong></td><td>Defines la idea, el problema y el ODS</td><td>PDF: Idea + ODS</td><td>F1 – Análisis</td></tr><tr><td><strong>Presentación 1</strong></td><td>Presentas tu idea al grupo</td><td>Presentación oral / Canva</td><td>F1 – Análisis</td></tr><tr><td><strong>Actividad 2</strong></td><td>Defines usuario y requisitos</td><td>PDF: Perfil + Requisitos</td><td>F1 – Análisis</td></tr><tr><td><strong>Presentación 2</strong></td><td>Presentas el análisis del usuario</td><td>Presentación oral</td><td>F1 – Análisis</td></tr><tr><td><strong>Actividad 3</strong></td><td>Analizas sector, competencia y aspectos legales</td><td>PDF: Análisis externo</td><td>F1 – Análisis</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span><strong>Importante</strong></div><div class="admonitionContent_BuS1"><p>Todas estas actividades constituyen las <strong>evidencias del Hito F1</strong>, que evalúa por completo el <strong>RA1 del módulo PIDAW</strong>.</p></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/pidaw/5/"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">5. Fases e hitos del proyecto</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/pidaw/5/fase2"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Fase 2 — Diseño y planificación</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1️⃣-qué-debes-hacer-en-esta-fase" class="table-of-contents__link toc-highlight">1️⃣ <strong>Qué debes hacer en esta fase</strong></a></li><li><a href="#2️⃣-entregables-de-la-fase" class="table-of-contents__link toc-highlight">2️⃣ <strong>Entregables de la fase</strong></a><ul><li><a href="#-entregable-1--idea--ods--necesidad" class="table-of-contents__link toc-highlight">📄 Entregable 1 — Idea + ODS + necesidad</a></li><li><a href="#--entregable-2--perfil-de-usuario-y-requisitos" class="table-of-contents__link toc-highlight">📄  Entregable 2 — Perfil de usuario y requisitos</a></li><li><a href="#--entregable-3--análisis-externo-del-proyecto" class="table-of-contents__link toc-highlight">📄  Entregable 3 — Análisis externo del proyecto</a></li></ul></li><li><a href="#3️⃣-qué-partes-se-incorporan-a-la-memoria-final" class="table-of-contents__link toc-highlight">3️⃣ Qué partes se incorporan a la memoria final</a></li><li><a href="#4️⃣-sugerencias-para-completar-la-fase" class="table-of-contents__link toc-highlight">4️⃣ Sugerencias para completar la fase</a></li><li><a href="#5️⃣-actividades-de-la-fase-1" class="table-of-contents__link toc-highlight">5️⃣ Actividades de la Fase 1</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="http://begordiales.github.io">Apuntes de informática</a> by <span property="cc:attributionName">Begoña Ordiales Rosado</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p></div></div></div></footer></div>
+</body>
+</html>
