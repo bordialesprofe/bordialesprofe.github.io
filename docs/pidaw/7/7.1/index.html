@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-pidaw/7/7.1" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">7.1 Control de versiones (Git y GitHub) | Apuntes de Informática</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bordialesprofe.github.io/docs/pidaw/7/7.1"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="7.1 Control de versiones (Git y GitHub) | Apuntes de Informática"><meta data-rh="true" name="description" content="Durante el desarrollo del proyecto vas a realizar muchos cambios en tu código. A medida que avances, añadirás nuevas funcionalidades, corregirás errores y modificarás partes del proyecto que ya habías implementado. En este proceso es importante contar con una herramienta que te permita registrar estos cambios y mantener un historial del desarrollo del proyecto."><meta data-rh="true" property="og:description" content="Durante el desarrollo del proyecto vas a realizar muchos cambios en tu código. A medida que avances, añadirás nuevas funcionalidades, corregirás errores y modificarás partes del proyecto que ya habías implementado. En este proceso es importante contar con una herramienta que te permita registrar estos cambios y mantener un historial del desarrollo del proyecto."><link data-rh="true" rel="icon" href="/img/estilo/begona.ico"><link data-rh="true" rel="canonical" href="https://bordialesprofe.github.io/docs/pidaw/7/7.1"><link data-rh="true" rel="alternate" href="https://bordialesprofe.github.io/docs/pidaw/7/7.1" hreflang="es"><link data-rh="true" rel="alternate" href="https://bordialesprofe.github.io/docs/pidaw/7/7.1" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.2c84f5f0.css">
+<script src="/assets/js/runtime~main.a55b4ff1.js" defer="defer"></script>
+<script src="/assets/js/main.b262ab48.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/estilo/logoBego.jpg"><link rel="preload" as="image" href="\img\PIDAW\FuncionamientoControlVersiones.png"><link rel="preload" as="image" href="\img\PIDAW\Git-GitHub.png"><link rel="preload" as="image" href="\img\PIDAW\Repo1.jpg"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/estilo/logoBego.jpg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/estilo/logoBego.jpg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Inicio</b></a><a class="navbar__item navbar__link" href="/docs/di/">DI</a><a class="navbar__item navbar__link" href="/docs/diw/">DIW</a><a class="navbar__item navbar__link" href="/docs/dwec/">DWEC</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/pidaw/">PIDAW</a></div><div class="navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Cambiar entre modo oscuro y claro (actualmente modo claro)" aria-label="Cambiar entre modo oscuro y claro (actualmente modo claro)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/">Proyecto Intermodular de Desarrollo de Aplicaciones Web (PIDAW)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/1">1. Proyecto Marco del módulo</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/2">2. Tu Proyecto</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/3">3. Normativa del módulo y fundamentos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/4">4. Organización del trabajo</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/pidaw/5/">5. Fases e hitos del proyecto</a><button aria-label="Ampliar la categoría &#x27;5. Fases e hitos del proyecto&#x27; de la barra lateral" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/pidaw/6">6. Índice de la memoria final</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/pidaw/7/">7. Recursos y herramientas para el desarrollo del proyecto</a><button aria-label="Colapsar categoría &#x27;7. Recursos y herramientas para el desarrollo del proyecto&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/pidaw/7/7.1">7.1 Control de versiones (Git y GitHub)</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/pidaw/7/"><span itemprop="name">7. Recursos y herramientas para el desarrollo del proyecto</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">7.1 Control de versiones (Git y GitHub)</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>7.1 Control de versiones (Git y GitHub)</h1></header><p>Durante el desarrollo del proyecto vas a realizar muchos cambios en tu código. A medida que avances, añadirás nuevas funcionalidades, corregirás errores y modificarás partes del proyecto que ya habías implementado. En este proceso es importante contar con una herramienta que te permita <strong>registrar estos cambios y mantener un historial del desarrollo del proyecto</strong>.</p>
+<blockquote>
+<p>Un <strong>sistema de control de versiones</strong> es una herramienta que permite guardar distintas versiones de un proyecto a lo largo del tiempo. Cada vez que realizas una modificación en el código puedes registrar ese cambio, lo que permite consultar el historial del proyecto o recuperar versiones anteriores si algo deja de funcionar correctamente.</p>
+</blockquote>
+<p>De forma sencilla, puedes entender el control de versiones como un sistema que va guardando instantáneas del estado de tu proyecto en diferentes momentos del desarrollo. Esto te permitirá volver atrás si cometes un error, comprobar qué cambios se han realizado o continuar trabajando desde versiones anteriores del proyecto.</p>
+<img src="\img\PIDAW\FuncionamientoControlVersiones.png" alt="Control de versiones" class="imagen-centrada" style="width:70%;height:auto;border-radius:8px">
+<div class="imagen-caption">Representación conceptual del funcionamiento de un sistema de control de versiones.</div>
+<p></p>
+<p>Además, estas herramientas facilitan el trabajo en equipo, ya que permiten que varias personas trabajen sobre el mismo proyecto sin sobrescribir el trabajo de los demás.</p>
+<p>Para gestionar el control de versiones utilizaremos dos herramientas muy habituales en el desarrollo de software:</p>
+<ul>
+<li><strong>Git</strong>, que es el sistema que permite registrar los cambios en el código.</li>
+<li><strong>GitHub</strong>, que es una plataforma web donde se almacenan los repositorios y que permite compartir el proyecto y trabajar de forma colaborativa.</li>
+</ul>
+<p>A lo largo del proyecto utilizarás estas herramientas para <strong>guardar el código de tu proyecto y mantener un registro de los cambios que vayas realizando</strong>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1️⃣-git-y-github">1️⃣ Git y GitHub<a href="#1️⃣-git-y-github" class="hash-link" aria-label="Enlace directo al 1️⃣ Git y GitHub" title="Enlace directo al 1️⃣ Git y GitHub">​</a></h2>
+<p>Para gestionar el control de versiones del proyecto utilizaremos dos herramientas muy habituales en el desarrollo de software: <strong>Git</strong> y <strong>GitHub</strong>.</p>
+<p><strong>Git</strong> es un sistema de control de versiones que permite registrar los cambios realizados en un proyecto. Gracias a Git puedes guardar diferentes versiones del código, consultar el historial de modificaciones y recuperar versiones anteriores si es necesario.</p>
+<p>Cuando trabajas con Git, el proyecto se guarda en un <strong>repositorio</strong>, que contiene todos los archivos del proyecto y el historial de cambios que se han realizado.</p>
+<p>Por otro lado, <strong>GitHub</strong> es una plataforma web que permite almacenar repositorios Git en la nube. Esto facilita compartir el proyecto con otros desarrolladores, trabajar en equipo y mantener una copia remota del código.</p>
+<p>En este proyecto utilizarás Git para registrar los cambios en tu código y GitHub para almacenar el repositorio del proyecto y compartirlo con tu equipo.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-diferencia-entre-git-y-github">🔶 Diferencia entre Git y GitHub<a href="#-diferencia-entre-git-y-github" class="hash-link" aria-label="Enlace directo al 🔶 Diferencia entre Git y GitHub" title="Enlace directo al 🔶 Diferencia entre Git y GitHub">​</a></h3>
+<p>Es importante entender la diferencia entre ambas herramientas:</p>
+<ul>
+<li><strong>Git</strong> es el sistema que se encarga de gestionar las versiones del código.</li>
+<li><strong>GitHub</strong> es la plataforma donde se almacenan los repositorios y se facilita el trabajo colaborativo.</li>
+</ul>
+<p>De forma sencilla, puedes pensar que <strong>Git es la herramienta que controla las versiones y GitHub es el lugar donde se guardan los proyectos</strong>.</p>
+<img src="\img\PIDAW\Git-GitHub.png" alt="Git y GitHub" class="imagen-centrada" style="width:40%;height:auto;border-radius:8px">
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2️⃣-requisitos-previos">2️⃣ Requisitos previos<a href="#2️⃣-requisitos-previos" class="hash-link" aria-label="Enlace directo al 2️⃣ Requisitos previos" title="Enlace directo al 2️⃣ Requisitos previos">​</a></h2>
+<p>Antes de comenzar a trabajar con el control de versiones es necesario realizar una pequeña configuración inicial en tu equipo. Para ello necesitarás instalar algunas herramientas y crear una cuenta en la plataforma que utilizaremos para almacenar los repositorios del proyecto.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-instalación-de-git">🔶 Instalación de Git<a href="#-instalación-de-git" class="hash-link" aria-label="Enlace directo al 🔶 Instalación de Git" title="Enlace directo al 🔶 Instalación de Git">​</a></h3>
+<p>Para poder utilizar un sistema de control de versiones es necesario instalar Git en tu ordenador. Esta herramienta se encargará de registrar los cambios que realices en el código del proyecto y de gestionar las distintas versiones del mismo.</p>
+<p>Puedes descargar Git desde su <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer">página oficial</a></p>
+<p>Una vez instalado, Git permitirá crear repositorios, registrar cambios en el código y sincronizar el proyecto con el repositorio remoto.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Comprobar si Git está instalado</div><div class="admonitionContent_BuS1"><p>Para comprobar si Git está instalado en tu equipo, abre una terminal o el símbolo del sistema y ejecuta el comando:</p><div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git --version</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>Si Git está instalado correctamente, se mostrará un mensaje con la versión instalada, por ejemplo: <code>git version 2.45.1</code></p></div></div>
+<div class="subtitulo-herramientas">Configuración inicial de Git</div>
+<p>La primera vez que utilices Git es recomendable configurar tu nombre de usuario y tu correo electrónico.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git config --global user.name &quot;Tu nombre&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git config --global user.email &quot;tu_correo@example.com&quot;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Configurar estos datos es importante porque permite identificar qué usuario ha realizado cada commit. De esta forma, el historial del proyecto mostrará correctamente el autor de cada cambio.</p>
+<blockquote>
+<p>Esta configuración solo es necesario realizarla una vez en tu equipo.</p>
+</blockquote>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-crear-una-cuenta-en-github">🔶 Crear una cuenta en GitHub<a href="#-crear-una-cuenta-en-github" class="hash-link" aria-label="Enlace directo al 🔶 Crear una cuenta en GitHub" title="Enlace directo al 🔶 Crear una cuenta en GitHub">​</a></h3>
+<p>También necesitarás disponer de una cuenta en GitHub, ya que utilizaremos esta plataforma para almacenar los repositorios del proyecto y compartir el código con el resto del equipo.</p>
+<p>Puedes crear una cuenta gratuita en <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+<p>Para registrarte sigue estos pasos:</p>
+<ul>
+<li>Accede a la página principal de GitHub.</li>
+<li>Haz clic en <strong>Sign up</strong> para crear una nueva cuenta.</li>
+<li>Introduce tu correo electrónico, un nombre de usuario y una contraseña.</li>
+<li>Completa el proceso de registro siguiendo las instrucciones que aparecen en pantalla.</li>
+</ul>
+<p>Una vez creada la cuenta podrás crear repositorios, subir tu código y colaborar con otros miembros del equipo.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-visual-studio-code">🔶 Visual Studio Code<a href="#-visual-studio-code" class="hash-link" aria-label="Enlace directo al 🔶 Visual Studio Code" title="Enlace directo al 🔶 Visual Studio Code">​</a></h3>
+<p>Durante el desarrollo del proyecto utilizaremos <strong>Visual Studio Code</strong> como entorno de desarrollo. Este editor incluye herramientas integradas para trabajar con Git, lo que permite gestionar el control de versiones directamente desde el propio editor.</p>
+<p>Desde Visual Studio Code podrás:</p>
+<ul>
+<li>visualizar los cambios realizados en los archivos</li>
+<li>realizar commits</li>
+<li>sincronizar el repositorio con GitHub</li>
+</ul>
+<p>todo ello sin necesidad de utilizar la terminal.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3️⃣-primer-repositorio">3️⃣ Primer repositorio<a href="#3️⃣-primer-repositorio" class="hash-link" aria-label="Enlace directo al 3️⃣ Primer repositorio" title="Enlace directo al 3️⃣ Primer repositorio">​</a></h2>
+<p>Una vez que dispones de una cuenta en GitHub y tienes instalado Git en tu equipo, puedes crear tu primer repositorio y comenzar a registrar los cambios en tu proyecto.</p>
+<p>En esta actividad crearás un repositorio en GitHub, lo descargarás en tu ordenador y realizarás tu primer commit.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Proyecto de práctica</div><div class="admonitionContent_BuS1"><p>Para realizar esta actividad utilizaremos un pequeño proyecto de ejemplo.</p><p>Descarga el siguiente proyecto en tu ordenador antes de comenzar con los pasos de la práctica: <strong><a href="/assets/files/REPOSITORIO-f9bde1b22ff346e5aa91f50011c594a8.zip" target="_blank">Repositorio de práctica</a></strong></p><p>Una vez descargado el archivo, descomprímelo en una carpeta de tu ordenador antes de comenzar la práctica.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-paso-1-inicializar-el-repositorio-local">🔶 Paso 1: Inicializar el repositorio local<a href="#-paso-1-inicializar-el-repositorio-local" class="hash-link" aria-label="Enlace directo al 🔶 Paso 1: Inicializar el repositorio local" title="Enlace directo al 🔶 Paso 1: Inicializar el repositorio local">​</a></h3>
+<p>En este punto ya dispones del proyecto de ejemplo en una carpeta de tu ordenador. Sin embargo, todavía no estás utilizando control de versiones sobre ese proyecto.</p>
+<p>Para comenzar a trabajar con Git es necesario inicializar un repositorio en la carpeta del proyecto.</p>
+<div class="subtitulo-herramientas">Desde Visual Studio Code</div>
+<ul>
+<li>Abre la carpeta del proyecto en Visual Studio Code.</li>
+<li>Accede al panel Source Control (icono de ramas).</li>
+<li>Pulsa el botón Initialize Repository.</li>
+</ul>
+<p>Al inicializar el repositorio, Git ha creado un sistema interno que permitirá registrar todos los cambios que realices en el proyecto.</p>
+<p>A partir de este momento:</p>
+<ul>
+<li>Git detectará los archivos modificados</li>
+<li>podrás guardar versiones del proyecto mediante commits</li>
+<li>se generará un historial de cambios</li>
+</ul>
+<p></p><div class="subtitulo-herramientas">Desde consola</div>
+También puedes inicializar un repositorio utilizando la terminal.<p></p>
+<p>Para ello, abre una consola en la carpeta del proyecto. Puedes utilizar:</p>
+<ul>
+<li><strong>Git Bash</strong>, haciendo clic derecho sobre la carpeta y seleccionando <em>Open Git Bash here</em></li>
+<li>o una <strong>terminal del sistema</strong> (CMD o PowerShell)</li>
+</ul>
+<p>Una vez abierta la consola, ejecuta: <code>git init</code>
+Este comando convierte la carpeta actual en un repositorio Git.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Comprobar la inicialización del repositorio</div><div class="admonitionContent_BuS1"><p>Si todo ha ido correctamente, en la carpeta del proyecto se habrá creado una carpeta oculta llamada <code>.git</code>.</p><p>Si no la ves, activa la opción de mostrar archivos ocultos en tu sistema.</p><p>Esta carpeta contiene toda la información necesaria para que Git pueda gestionar el control de versiones del proyecto.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-paso-2-registrar-el-primer-commit">🔶 Paso 2: Registrar el primer commit<a href="#-paso-2-registrar-el-primer-commit" class="hash-link" aria-label="Enlace directo al 🔶 Paso 2: Registrar el primer commit" title="Enlace directo al 🔶 Paso 2: Registrar el primer commit">​</a></h3>
+<p>Una vez inicializado el repositorio, Git comenzará a detectar los cambios que realices en los archivos del proyecto. En este momento, es necesario registrar estos cambios para guardar una primera versión del proyecto.</p>
+<p>Para registrar estos cambios, se realiza un commit.
+</p><div class="subtitulo-herramientas">Desde Visual Studio Code</div><p></p>
+<ol>
+<li>Abre el panel <strong>Source Control</strong> en Visual Studio Code.</li>
+<li>Verás los archivos modificados en la sección de cambios.</li>
+</ol>
+<img src="\img\PIDAW\Repo1.jpg" alt="Archivos modificados" class="imagen-centrada" style="width:40%;height:auto;border-radius:8px">
+<p></p>
+<ol start="3">
+<li>Escribe un mensaje de commit que describa el cambio realizado. Por ejemplo: <code>Primer commit</code></li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Commit sin mensaje claro</div><div class="admonitionContent_BuS1"><p>Es importante escribir mensajes de commit claros y descriptivos.</p><p>Evita mensajes como &quot;cambios&quot; o &quot;update&quot;. En su lugar, describe brevemente qué has hecho.</p></div></div>
+<ol start="4">
+<li>Pulsa el botón <strong>Commit</strong> (Confirmación) para guardar los cambios.</li>
+</ol>
+<p>Al realizar el commit, Git guarda una nueva versión del proyecto en el historial.</p>
+<p>Después de realizar el commit:</p>
+<ul>
+<li>los cambios quedan registrados en el historial</li>
+<li>se crea un punto al que podrás volver en el futuro</li>
+<li>el proyecto tiene ya una primera versión guardada</li>
+</ul>
+<p></p><div class="subtitulo-herramientas">Desde Consola</div>
+También puedes realizar un commit utilizando la terminal.<p></p>
+<ul>
+<li>Primero, prepara los archivos con: <code>git add .</code></li>
+<li>Después, crea el commit: <code>git commit -m &quot;Primer commit&quot;</code></li>
+</ul>
+<p>El comando <code>git add .</code> selecciona los cambios que quieres guardar, y <code>git commit</code> los guarda en el historial del proyecto.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Ver historial de commits</div><div class="admonitionContent_BuS1"><p>Puedes consultar el historial de cambios del proyecto.</p><p>En algunos casos, Visual Studio Code muestra un apartado llamado <strong>Graph</strong>, donde se visualizan los commits de forma gráfica.</p><p>Si no aparece, puedes utilizar la terminal:</p><ul>
+<li><code>git log</code> → historial completo</li>
+<li><code>git log --oneline</code> → versión resumida</li>
+</ul></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-paso-3-subir-el-proyecto-a-github">🔶 Paso 3: Subir el proyecto a GitHub<a href="#-paso-3-subir-el-proyecto-a-github" class="hash-link" aria-label="Enlace directo al 🔶 Paso 3: Subir el proyecto a GitHub" title="Enlace directo al 🔶 Paso 3: Subir el proyecto a GitHub">​</a></h3>
+<p>Una vez realizado el primer commit, el proyecto sigue estando únicamente en tu ordenador. Para poder compartirlo y trabajar en equipo, es necesario subirlo a GitHub.
+</p><div class="subtitulo-herramientas">Desde Visual Studio Code</div><p></p>
+<ol>
+<li>Accede al panel Source Control.</li>
+<li>Pulsa el botón <strong>Publish Branch</strong> (Publicar Branch).</li>
+<li>Si es la primera vez que utilizas GitHub en Visual Studio Code, se abrirá automáticamente el navegador para iniciar sesión con tu cuenta..</li>
+<li>Indica si quieres que el repositorio sea público o privado.</li>
+</ol>
+<p>Una vez completado este proceso, el repositorio se creará en GitHub y se subirá automáticamente tu proyecto.</p>
+<p>Al pulsar <strong>Publish Branch</strong>, Visual Studio Code realiza automáticamente varias acciones:</p>
+<ul>
+<li>crea un repositorio remoto en GitHub</li>
+<li>conecta tu repositorio local con ese repositorio</li>
+<li>sube los commits realizados</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Si Publish Branch no funciona</div><div class="admonitionContent_BuS1"><p>En algunos casos, puede ser necesario crear el repositorio manualmente en GitHub.</p><p>Para ello:</p><ol>
+<li>Accede a GitHub.</li>
+<li>Pulsa en <strong>New repository</strong>.</li>
+<li>Introduce un nombre para el repositorio.</li>
+<li>Selecciona si será público o privado.</li>
+<li>No añadas README ni otros archivos iniciales.</li>
+<li>Pulsa en <strong>Create repository</strong>.</li>
+</ol><p>Una vez creado, podrás subir el proyecto desde la terminal.</p></div></div>
+<p></p><div class="subtitulo-herramientas">Desde consola</div>
+También puedes subir tu proyecto utilizando la terminal.<p></p>
+<p>Una vez creado el repositorio en GitHub, ejecuta los siguientes comandos en la carpeta del proyecto:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git remote add origin https://github.com/usuario/pidaw-git-practica.git  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git branch -M main  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git push -u origin main  </span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>💡 Sustituye la URL por la de tu repositorio en GitHub. Para obtenerla, accede a tu repositorio, pulsa en <strong>Code</strong> y copia la URL que aparece.
+<strong>Explicación de los comandos:</strong></p>
+<ul>
+<li><code>git remote add origin</code> → conecta tu proyecto local con el repositorio de GitHub</li>
+<li><code>git branch -M main</code> → establece la rama principal como <code>main</code></li>
+<li><code>git push -u origin main</code> → sube el proyecto a GitHub y guarda la conexión para futuros envíos</li>
+</ul>
+<p>El comando <code>git push</code> envía los commits al repositorio remoto en GitHub.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Comprobación</div><div class="admonitionContent_BuS1"><p>Si todo ha ido bien, podrás ver tu proyecto en tu perfil de GitHub con los archivos y el commit realizado.</p></div></div>
+<p>👉 Hasta ahora has estado trabajando en un repositorio local. A partir de este momento, tu proyecto también estará disponible en GitHub.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-paso-4-realizar-cambios-y-sincronizar-el-proyecto">🔶 Paso 4: Realizar cambios y sincronizar el proyecto<a href="#-paso-4-realizar-cambios-y-sincronizar-el-proyecto" class="hash-link" aria-label="Enlace directo al 🔶 Paso 4: Realizar cambios y sincronizar el proyecto" title="Enlace directo al 🔶 Paso 4: Realizar cambios y sincronizar el proyecto">​</a></h3>
+<p>Una vez que el repositorio está en GitHub, el flujo de trabajo será siempre el mismo: modificar archivos, guardar los cambios y subirlos al repositorio remoto.</p>
+<div class="subtitulo-herramientas">Desde Visual Studio Code</div>
+<ol>
+<li>Realiza algún cambio en un archivo del proyecto (por ejemplo, modifica el contenido de <code>index.html</code>).</li>
+<li>Accede al panel <strong>Source Control</strong>.</li>
+<li>Escribe un mensaje descriptivo en el campo de commit.</li>
+<li>Pulsa el botón <strong>Confirm (✔)</strong> para guardar los cambios.</li>
+<li>Pulsa <strong>Sync Changes</strong> para subirlos a GitHub.</li>
+</ol>
+<p>En este proceso se realizan dos acciones:</p>
+<ul>
+<li><strong>Commit</strong> → guarda los cambios en tu repositorio local</li>
+<li><strong>Push (Sync Changes)</strong>→ envía esos cambios a GitHub</li>
+</ul>
+<div class="subtitulo-herramientas">Desde consola</div>
+<p>También puedes realizar este proceso desde la terminal:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git add .</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git commit -m &quot;Descripción de los cambios&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git push</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ul>
+<li><code>git add .</code> → prepara los cambios</li>
+<li><code>git commit</code> → guarda los cambios</li>
+<li><code>git push</code> → los sube a GitHub</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Flujo de trabajo habitual</div><div class="admonitionContent_BuS1"><p>A partir de este momento, cada vez que realices cambios en tu proyecto deberás seguir este proceso:</p><p><strong>modificar → commit → push</strong></p></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Error habitual</div><div class="admonitionContent_BuS1"><p>Si realizas un commit pero no haces push, los cambios no se verán en GitHub.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4️⃣-sincronizar-el-proyecto-en-varios-ordenadores">4️⃣ Sincronizar el proyecto en varios ordenadores<a href="#4️⃣-sincronizar-el-proyecto-en-varios-ordenadores" class="hash-link" aria-label="Enlace directo al 4️⃣ Sincronizar el proyecto en varios ordenadores" title="Enlace directo al 4️⃣ Sincronizar el proyecto en varios ordenadores">​</a></h2>
+<p>Una de las principales ventajas de Git y GitHub es la posibilidad de trabajar en el mismo proyecto desde distintos equipos, manteniendo siempre los cambios sincronizados.</p>
+<p>El flujo habitual será:</p>
+<ul>
+<li>descargar el proyecto en un equipo</li>
+<li>realizar cambios</li>
+<li>subirlos a GitHub</li>
+<li>actualizar el proyecto en otro equipo</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-clonar-el-repositorio">🔶 Clonar el repositorio<a href="#-clonar-el-repositorio" class="hash-link" aria-label="Enlace directo al 🔶 Clonar el repositorio" title="Enlace directo al 🔶 Clonar el repositorio">​</a></h3>
+<p>Si quieres trabajar en otro ordenador, debes descargar el proyecto desde GitHub.
+</p><div class="subtitulo-herramientas">Desde Visual Studio Code</div><p></p>
+<ol>
+<li>Abre Visual Studio Code.</li>
+<li>Pulsa en Clone Git Repository (o accede desde la paleta de comandos).</li>
+<li>Pega la URL del repositorio.</li>
+<li>Selecciona la carpeta donde quieres guardar el proyecto.</li>
+<li>Abre el proyecto cuando finalice la descarga.</li>
+</ol>
+<div class="subtitulo-herramientas">Desde consola</div>
+<ol>
+<li>Accede a la carpeta donde quieras guardar el proyecto.</li>
+<li>Ejecuta: <code>git clone https://github.com/usuario/repositorio.git</code></li>
+</ol>
+<p>Esto creará una carpeta con el nombre del repositorio y descargará todo el proyecto junto con su historial de cambios.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-subir-cambios-push">🔶 Subir cambios (push)<a href="#-subir-cambios-push" class="hash-link" aria-label="Enlace directo al 🔶 Subir cambios (push)" title="Enlace directo al 🔶 Subir cambios (push)">​</a></h3>
+<p>Después de realizar cambios en el proyecto, debes subirlos a GitHub.
+</p><div class="subtitulo-herramientas">Desde Visual Studio Code</div><p></p>
+<ol>
+<li>Realiza cambios en los archivos.</li>
+<li>Accede a <strong>Source Control</strong>.</li>
+<li>Escribe un mensaje de commit.</li>
+<li>Pulsa <strong>Confirm (✔)</strong>.</li>
+<li>Pulsa <strong>Sync Changes</strong> para subir los cambios.</li>
+</ol>
+<div class="subtitulo-herramientas">Desde consola</div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git add .</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git commit -m &quot;Descripción de los cambios&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git push</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ul>
+<li><code>git add .</code> → prepara los cambios</li>
+<li><code>git commit</code> → guarda los cambios en local</li>
+<li><code>git push</code> → sube los cambios a GitHub</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="obtener-cambios-pull">🔶Obtener cambios (pull)<a href="#obtener-cambios-pull" class="hash-link" aria-label="Enlace directo al 🔶Obtener cambios (pull)" title="Enlace directo al 🔶Obtener cambios (pull)">​</a></h3>
+<p>Si estás trabajando en varios equipos, es importante descargar los cambios realizados desde otros dispositivos.</p>
+<div class="subtitulo-herramientas">Desde Visual Studio Code</div>
+<ol>
+<li>Accede a <strong>Source Control</strong>.</li>
+<li>Pulsa <strong>Sync Changes</strong> o <strong>Pull</strong> para actualizar el proyecto.</li>
+</ol>
+<div class="subtitulo-herramientas">Desde consola</div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git pull</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Este comando descarga y aplica los últimos cambios del repositorio remoto.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Flujo de trabajo en varios equipos</div><div class="admonitionContent_BuS1"><p>Cuando trabajes en distintos ordenadores, sigue siempre este orden:</p><ol>
+<li>git pull → antes de empezar a trabajar</li>
+<li>modificar archivos</li>
+<li>commit</li>
+<li>git push → al terminar</li>
+</ol></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Error habitual</div><div class="admonitionContent_BuS1"><p>Si no haces <code>git pull</code> antes de trabajar, puedes tener conflictos al subir tus cambios.</p></div></div>
+<p>👉 GitHub actúa como punto central que permite mantener sincronizado el proyecto entre todos los equipos.</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/pidaw/7/"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">7. Recursos y herramientas para el desarrollo del proyecto</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1️⃣-git-y-github" class="table-of-contents__link toc-highlight">1️⃣ Git y GitHub</a><ul><li><a href="#-diferencia-entre-git-y-github" class="table-of-contents__link toc-highlight">🔶 Diferencia entre Git y GitHub</a></li></ul></li><li><a href="#2️⃣-requisitos-previos" class="table-of-contents__link toc-highlight">2️⃣ Requisitos previos</a><ul><li><a href="#-instalación-de-git" class="table-of-contents__link toc-highlight">🔶 Instalación de Git</a></li><li><a href="#-crear-una-cuenta-en-github" class="table-of-contents__link toc-highlight">🔶 Crear una cuenta en GitHub</a></li><li><a href="#-visual-studio-code" class="table-of-contents__link toc-highlight">🔶 Visual Studio Code</a></li></ul></li><li><a href="#3️⃣-primer-repositorio" class="table-of-contents__link toc-highlight">3️⃣ Primer repositorio</a><ul><li><a href="#-paso-1-inicializar-el-repositorio-local" class="table-of-contents__link toc-highlight">🔶 Paso 1: Inicializar el repositorio local</a></li><li><a href="#-paso-2-registrar-el-primer-commit" class="table-of-contents__link toc-highlight">🔶 Paso 2: Registrar el primer commit</a></li><li><a href="#-paso-3-subir-el-proyecto-a-github" class="table-of-contents__link toc-highlight">🔶 Paso 3: Subir el proyecto a GitHub</a></li><li><a href="#-paso-4-realizar-cambios-y-sincronizar-el-proyecto" class="table-of-contents__link toc-highlight">🔶 Paso 4: Realizar cambios y sincronizar el proyecto</a></li></ul></li><li><a href="#4️⃣-sincronizar-el-proyecto-en-varios-ordenadores" class="table-of-contents__link toc-highlight">4️⃣ Sincronizar el proyecto en varios ordenadores</a><ul><li><a href="#-clonar-el-repositorio" class="table-of-contents__link toc-highlight">🔶 Clonar el repositorio</a></li><li><a href="#-subir-cambios-push" class="table-of-contents__link toc-highlight">🔶 Subir cambios (push)</a></li><li><a href="#obtener-cambios-pull" class="table-of-contents__link toc-highlight">🔶Obtener cambios (pull)</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="http://begordiales.github.io">Apuntes de informática</a> by <span property="cc:attributionName">Begoña Ordiales Rosado</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p></div></div></div></footer></div>
+</body>
+</html>
